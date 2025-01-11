@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blog with Dark Mode & Search</title>
+   <link rel="stylesheet" href="style.css">
+  </head>
+</html>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Blog</div>
+    <input type="text" id="search" placeholder="Search blogs..." />
+    <div class="actions">
+      <!-- <button id="darkModeToggle">Toggle Dark Mode</button> -->
+      <button id="darkModeToggle">
+        <span id="themeIcon">🌙</span>
+      </button>
+      
+      <button id="createBlog">Create Blog</button>
+    </div>
+  </nav>
+<!-- mycode -->
+
+  <!-- end -->
+  <section class="hero">
+    <div>
+      <h1>Discover Amazing Stories</h1>
+      <p>
+        Dive into articles about lifestyle, technology, education, and more.  
+        Your daily dose of inspiration awaits.
+      </p>
+      <button class="cta-button">Explore Now</button>
+    </div>
+  </section>
+  
+<!-- end -->
+  <!-- Blog Section -->
+  <section class="blog-section" id="blog-section">
+    <!-- Blog Cards will be added dynamically -->
+  </section>
+
+  <!-- Pagination -->
+  <div class="pagination" id="pagination"></div>
+
+  <!-- Modal -->
+  <div
+    id="blogModal"
+    style="
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* background: white; */
+      background: linear-gradient(135deg, #ffffff, #f9f9f9);
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      /* my code */width: 70%;animation: fadiIn 3s infinite;
+      max-width: 90%; /* Limit the modal width */
+  max-height: 80%; /* Limit the modal height */
+  overflow-y: auto; /* Add vertical scroll for long content */
+  border-radius: 10px; /* Optional: Rounded corners */
+  z-index: 1000; /* Ensure it's above other elements */
+    "
+  >
+    <h3>Create a New Blog</h3>
+    <input type="text" id="newTitle" placeholder="Title" required /><br /><br />
+    <input
+      type="text"
+      id="newTags"
+      placeholder="Tags (comma-separated)"
+      required
+    /><br /><br />
+    <div id="newDescription" class="editable-div" contenteditable="true" placeholder="Description" required></div>
+    <br /><br />
+    <input
+      type="url"
+      id="newImageUrl"
+      placeholder="Image URL"
+      required
+    /><br /><br />
+    <button id="saveBlog">Save Blog</button>
+    <!-- <button id="closeModal">Cancel</button> -->
+    <button id="closeModal" style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; cursor: pointer; font-size: 18px;">✖</button>
+
+  </div>
+  
+ <script src="/script.js"></script>
+</body>
+</html>
