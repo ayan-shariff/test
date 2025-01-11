@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.dark-mode {
+  background: #333;
+  color: #f9f9f9;
+}
+
+/* mycode */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #333, #555);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffcc00;
+}
+
+.navbar input[type="text"] {
+  padding: 8px 15px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  flex-grow: 1;
+  margin: 0 15px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.navbar input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.navbar .actions {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .actions button {
+  padding: 8px 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background- 0.3s ease;
+}
+
+.navbar .actions button:hover {
+  background: #0056b3;
+}
+
+.navbar .actions button:active {
+  transform: scale(0.98);
+}
+.left {
+  display: flex;
+}
+
+/* mycode */
+.hero {
+  width: 100%;
+  height: 400px; /* Slightly taller for a better visual */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://cdn.pixabay.com/photo/2024/12/06/12/23/ai-generated-9248643_640.jpg")
+      center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* Make text white for better contrast */
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+
+.hero .cta-button {
+  padding: 10px 20px;
+  background: #ff9800; /* Vibrant orange button */
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero .cta-button:hover {
+  background: #e68a00; /* Slightly darker on hover */
+}
+
+/*  mycode end*/
+.blog-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-card {
+  width: 30%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .blog-card {
+  background: #444;
+  color: #ddd;
+}
+
+.blog-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  /* my */
+  border-bottom: 2px solid #007bff;
+}
+
+.blog-card .content {
+  padding: 15px;
+}
+
+.blog-card .tags {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.tag {
+  background: #ddd;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.blog-card:hover h3 {
+  color: #007bff; /* Highlight title on hover */
+}
+/* my code */
+.blog-card img:hover {
+  transform: scale(1.05); /* Zoom-in effect */
+  transition: transform 0.3s;
+}
+
+.blog-card .content:hover {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Lighter gradient */
+}
+.dark-mode .blog-card .content:hover {
+  background: linear-gradient(
+    135deg,
+    #333,
+    #555
+  ); /* Darker gradient for dark mode */
+}
+
+.read-more {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .blog-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .navbar {
+    flex-direction: column;
+  } */
+
+  .blog-card {
+    width: 100%;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #555;
+}
+
+/* Fix for Dark Mode */
+.dark-mode .blog-card h3,
+.dark-mode .blog-card p,
+.dark-mode .tag {
+  color: #f9f9f9; /* Light text color for better visibility in dark mode */
+}
+
+.dark-mode .tag {
+  background: #666; /* Slightly darker background for tags in dark mode */
+}
+.editable-div {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid #ccc;
+
+  padding: 10px;
+  font-size: 14px;
+  resize: vertical;
+}
+/* my code */
+.dark-mode #blogModal {
+  background: #444; /* Dark background for the modal */
+  color: #f9f9f9; /* Light text color for visibility */
+}
+
+.dark-mode #blogModal input,
+.dark-mode #blogModal .editable-div {
+  background: #555; /* Darker input background */
+  color: #f9f9f9; /* Light text color */
+  border: 1px solid #666; /* Adjust border for visibility */
+}
+
+#newDescription {
+  border: 2px solid red;
+}
+/* Heading Styling */
+#blogModal h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* Input and Contenteditable Styling */
+#blogModal input,
+#blogModal .editable-div {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fdfdfd;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#blogModal input:focus,
+#blogModal .editable-div:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+#blogModal button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 10px;
+}
+
+#blogModal button:hover {
+  background: #0056b3;
+}
+
+#blogModal button:last-child {
+  background: #ddd;
+  color: #333;
+}
+
+#blogModal button:last-child:hover {
+  background: #bbb;
+}
+
+/* Animation for Modal Entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+/* my code */
